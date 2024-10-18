@@ -3,6 +3,8 @@ import Home from "../pages/Home";
 import Register from "../pages/Register";
 import DashboardPaciente from "../pages/DashboardPaciente";
 import Login from "../pages/Login";
+import FirstStep from "../pages/FirstStep";
+
 
 const Routers = () => {
   return (
@@ -22,6 +24,10 @@ const Routers = () => {
       <Route
         path="/login"
         element={<Login />}
+      />
+      <Route 
+      path="/firststep" 
+      element={<FirstStep />} 
       />
     </Routes>
   );
