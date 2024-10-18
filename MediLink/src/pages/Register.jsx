@@ -6,6 +6,7 @@ const Register = () => {
   const [focusedInput, setFocusedInput] = useState(null);
   const [formData, setFormData] = useState({
     dni: "",
+    nombreCompleto: "", // Campo agregado
     dia: "",
     mes: "",
     ano: "",
@@ -51,7 +52,7 @@ const Register = () => {
   };
 
   return (
-    <div className="mt-4 font-abc w-[474px] h-[959.33px] mx-auto bg-white p-6 rounded-xl shadow-[0px_10px_30px_rgba(0,0,0,0.4)]">
+    <div className="mt-4 font-abc w-[474px] h-[1118.33px] mx-auto bg-white p-6 rounded-xl shadow-[0px_10px_30px_rgba(0,0,0,0.4)]">
       {/* Flecha y Volver */}
       <div
         className="flex items-center p-4 mb-6 cursor-pointer"
@@ -63,14 +64,12 @@ const Register = () => {
 
       {/* Título */}
       <div className="flex items-center ml-4 space-x-8">
-  <h1 className="text-[24px] text-[#515151] font-medium">Crear cuenta</h1>
-  
-  {/* Contenedor que agrupa "Mi" y el logo */}
-  <div className="flex items-center">
-    <span className="text-[28px] text-gray-400">Mi</span>
-    <img src="logoheader.png" alt="Logo" />
-  </div>
-</div>
+        <h1 className="text-[24px] text-[#515151] font-medium">Crear cuenta</h1>
+        <div className="flex items-center">
+          <span className="text-[28px] text-gray-400">Mi</span>
+          <img src="logoheader.png" alt="Logo" />
+        </div>
+      </div>
 
       {/* Formulario */}
       <form className="space-y-6 p-4 mt-12" onSubmit={handleSubmit}>
@@ -95,6 +94,32 @@ const Register = () => {
           />
           <div className="h-5">
             {errors.dni && <p className="text-red-500 text-sm">{errors.dni}</p>}
+          </div>
+        </div>
+
+        {/* Nombre Completo */}
+        <div>
+          <label
+            className="block text-[#515151] text-[1rem] font-medium mb-2"
+            htmlFor="nombreCompleto"
+          >
+            Nombre Completo
+          </label>
+          <input
+            type="text"
+            id="nombreCompleto"
+            name="nombreCompleto"
+            placeholder="Nombre Completo"
+            value={formData.nombreCompleto}
+            onChange={handleChange}
+            className={`w-full px-4 py-4 mt-2 border-b-2 border-gray-400 rounded-b-2xl outline-none transition-all duration-300 
+              ${focusedInput === "nombreCompleto" ? "bg-green-200" : "bg-white"}`}
+            onFocus={() => handleFocus("nombreCompleto")}
+          />
+          <div className="h-5">
+            {errors.nombreCompleto && (
+              <p className="text-red-500 text-sm">{errors.nombreCompleto}</p>
+            )}
           </div>
         </div>
 
@@ -217,13 +242,13 @@ const Register = () => {
           </div>
         </div>
 
-        {/* Botón Continuar */}
-        <div className="flex justify-end">
+        {/* Botón de enviar */}
+        <div className="flex justify-end mt-12">
           <button
             type="submit"
-            className="px-12 py-2 bg-[#515151] text-white rounded-xl shadow-md hover:bg-[#5D5D5D] transition"
+            className="px-12 bg-[#515151] text-2xl font-sm  text-white py-4 rounded-xl hover:bg-gray-600 transition duration-300 ease-in-out"
           >
-            Continuar
+            Crear Cuenta
           </button>
         </div>
       </form>
