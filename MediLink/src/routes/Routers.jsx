@@ -4,6 +4,8 @@ import Register from "../pages/Register";
 import DashboardPaciente from "../pages/DashboardPaciente";
 import Login from "../pages/Login";
 import FirstStep from "../pages/FirstStep";
+import SecondStep from "../pages/SecondStep";
+import ThirdStep from "../pages/ThirdStep";
 
 
 const Routers = () => {
@@ -28,6 +30,14 @@ const Routers = () => {
       <Route 
       path="/firststep" 
       element={<FirstStep />} 
+      />
+      <Route 
+      path="/secondstep" 
+      element={<SecondStep />} 
+      />
+      <Route 
+      path="/thirdstep" 
+      element={<ThirdStep />} 
       />
     </Routes>
   );
