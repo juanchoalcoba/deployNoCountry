@@ -68,7 +68,7 @@ const FourthStep = () => {
         </div>
         <button
           type="button"
-          onClick={() => navigate("/fourthstep")}
+          onClick={() => navigate("/fifthstep")}
           className="bg-[#515151] text-white text-[20px] px-8 py-2 font-medium rounded-xl hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-400"
         >
           Pagar
