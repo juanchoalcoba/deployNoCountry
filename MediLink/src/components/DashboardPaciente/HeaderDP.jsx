@@ -6,20 +6,39 @@ const HeaderDP = () => {
   const [userName, setUserName] = useState('');
 
   // Función para obtener solo el primer nombre del usuario
-  useEffect(() => {
+  const updateUserName = () => {
     const loggedUser = JSON.parse(localStorage.getItem('loggedUser'));
     if (loggedUser && loggedUser.nombreCompleto) {
       const firstName = loggedUser.nombreCompleto.split(' ')[0]; // Obtiene solo el primer nombre
       setUserName(firstName);
+    } else {
+      setUserName('');
     }
+  };
+
+  // useEffect para cargar el usuario al montar el componente y cuando se actualice localStorage
+  useEffect(() => {
+    updateUserName(); // Cargar el usuario al montar el componente
+
+    const handleStorageChange = () => {
+      updateUserName(); // Actualizar el usuario cuando cambie el localStorage
+    };
+
+    // Escuchar los cambios en el localStorage
+    window.addEventListener('storage', handleStorageChange);
+
+    // Cleanup el listener cuando se desmonte el componente
+    return () => {
+      window.removeEventListener('storage', handleStorageChange);
+    };
   }, []);
 
   return (
     <nav className="w-full font-abc h-16 bg-gray-200 flex items-center justify-between p-4">
       {/* Logo */}
       <div className="flex items-center ml-4">
-          <span className="text-[28px] text-gray-400">Mi</span>
-          <img src="logoheader.png" alt="Logo" />
+        <span className="text-[28px] text-gray-400">Mi</span>
+        <img src="logoheader.png" alt="Logo" />
       </div>
 
       {/* Saludo, Avatar y Notificaciones */}
