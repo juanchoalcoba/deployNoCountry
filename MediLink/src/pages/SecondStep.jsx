@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import HeaderDP from "../components/DashboardPaciente/HeaderDP";
 import Calendar from 'react-calendar';
@@ -11,6 +11,14 @@ const SecondStep = () => {
     const navigate = useNavigate();
     const [currentDate, setCurrentDate] = useState(new Date());
     const [selectedHour, setSelectedHour] = useState(null);
+    const [especialidad, setEspecialidad] = useState('');
+
+    useEffect(() => {
+        const storedEspecialidad = localStorage.getItem('especialidad');
+        if (storedEspecialidad) {
+            setEspecialidad(storedEspecialidad);
+        }
+    }, []);
 
     const handleHourSelect = (hour) => {
         setSelectedHour(hour);
@@ -72,10 +80,15 @@ const SecondStep = () => {
                     />
                 </div>
 
-                <HoraEspecialistas selectedDate={currentDate} onHourSelect={handleHourSelect} />
-                <HoraEspecialistas2 selectedDate={currentDate} onHourSelect={handleHourSelect} />
+                {especialidad === "Dermatología" && (
+                    <HoraEspecialistas selectedDate={currentDate} onHourSelect={handleHourSelect} />
+                )}
 
-                <div className="flex justify-between w-full mt-4">
+                {especialidad === "Cardiología" && (
+                    <HoraEspecialistas2 selectedDate={currentDate} onHourSelect={handleHourSelect} />
+                )}
+
+                <div className="flex justify-between w-full mt-4 p-16">
                     <div
                         className="text-gray-700 font-medium text-[26px] cursor-pointer"
                         onClick={() => navigate(-1)}

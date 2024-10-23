@@ -30,19 +30,21 @@ const Login = () => {
     e.preventDefault();
 
     if (validateForm()) {
-      const userData = JSON.parse(localStorage.getItem("userData"));
+      const users = JSON.parse(localStorage.getItem("users")) || [];
 
-      if (
-        userData &&
-        userData.dni === formData.dni &&
-        userData.password === formData.password
-      ) {
-        navigate("/DashboardPaciente"); // Redirige al dashboard si el inicio de sesión es exitoso
+      const foundUser = users.find(
+        (user) =>
+          user.dni === formData.dni && user.password === formData.password
+      );
+
+      if (foundUser) {
+        navigate("/DashboardPaciente");
       } else {
         setErrors({ form: "DNI o contraseña incorrectos" });
       }
     }
   };
+
 
   return (
     <div className="mt-4 font-abc w-[474px]  mx-auto bg-white p-6 rounded-xl shadow-[0px_10px_30px_rgba(0,0,0,0.4)]">
@@ -61,7 +63,6 @@ const Login = () => {
           Bienvenido a
         </h1>
 
-        {/* Contenedor que agrupa "Mi" y el logo */}
         <div className="flex items-center">
           <span className="text-[28px] text-gray-400">Mi</span>
           <img
@@ -129,7 +130,7 @@ const Login = () => {
           <button
             type="button"
             className="font-medium px-12 py-2 bg-white text-gray-600 border-2 border-gray-500 rounded-xl shadow-md hover:bg-gray-200 transition"
-            onClick={() => navigate("/register")} // Navegar a la página de registro
+            onClick={() => navigate("/register")} 
           >
             Registrarse
           </button>
