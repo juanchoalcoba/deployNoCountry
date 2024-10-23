@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const HoraEspecialistas2 = ({ selectedDate, onHourSelect }) => {
     const [selectedHour, setSelectedHour] = useState(null);
+    const doctorName = "Roberto Salinas Larenas";
 
     // Función para manejar la selección de una hora
     const handleSelectHour = (hour) => {
@@ -9,13 +10,18 @@ const HoraEspecialistas2 = ({ selectedDate, onHourSelect }) => {
         onHourSelect(hour); // Notificar al padre la selección
     };
 
+
+    useEffect(() => {
+    localStorage.setItem("doctorName", doctorName);
+  }, []);
+
     return (
         <div className="p-4 w-[691px] h-[364] mt-8">
             <div className="flex flex-col md:flex-row items-start md:items-center space-y-6 md:space-y-0 md:space-x-8">
                 {/* Contenedor de la Información de la doctora */}
                 <div className="flex flex-col space-y-4 md:w-2/3">
                     <div className="flex flex-col space-y-2">
-                        <h3 className="text-[20px] font-bold">Roberto Salinas Larenas</h3>
+                        <h3 className="text-[20px] font-bold">{doctorName}</h3>
                         <p className="text-gray-600 text-[20px]">Cardiólogo</p>
                     </div>
 

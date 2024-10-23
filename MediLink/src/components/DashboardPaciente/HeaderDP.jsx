@@ -7,9 +7,9 @@ const HeaderDP = () => {
 
   // Función para obtener solo el primer nombre del usuario
   useEffect(() => {
-    const userData = JSON.parse(localStorage.getItem('userData'));
-    if (userData && userData.nombreCompleto) {
-      const firstName = userData.nombreCompleto.split(' ')[0]; // Obtiene solo el primer nombre
+    const loggedUser = JSON.parse(localStorage.getItem('loggedUser'));
+    if (loggedUser && loggedUser.nombreCompleto) {
+      const firstName = loggedUser.nombreCompleto.split(' ')[0]; // Obtiene solo el primer nombre
       setUserName(firstName);
     }
   }, []);

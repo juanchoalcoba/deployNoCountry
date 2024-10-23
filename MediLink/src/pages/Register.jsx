@@ -46,10 +46,24 @@ const Register = () => {
     e.preventDefault();
 
     if (validateForm()) {
-        localStorage.setItem("userData", JSON.stringify(formData)); // Guardar todos los datos
-        navigate("/DashboardPaciente");
+      const existingUsers = JSON.parse(localStorage.getItem("users")) || [];
+
+      // Crear un nuevo usuario
+      const newUser = { ...formData };
+
+      // Agregar al localStorage
+      existingUsers.push(newUser);
+      localStorage.setItem("users", JSON.stringify(existingUsers));
+
+      // Guardar el nombre completo para el saludo en el dashboard
+      localStorage.setItem("loggedUser", JSON.stringify({ nombreCompleto: formData.nombreCompleto }));
+
+
+      // Redirigir al dashboard
+      navigate("/DashboardPaciente");
     }
-};
+  };
+  
 
   return (
     <div className="mt-4 font-abc w-[474px] h-[1118.33px] mx-auto bg-white p-6 rounded-xl shadow-[0px_10px_30px_rgba(0,0,0,0.4)]">

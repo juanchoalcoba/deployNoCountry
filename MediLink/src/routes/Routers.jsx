@@ -6,6 +6,7 @@ import Login from "../pages/Login";
 import FirstStep from "../pages/FirstStep";
 import SecondStep from "../pages/SecondStep";
 import ThirdStep from "../pages/ThirdStep";
+import FourthStep from "../pages/FourthStep";
 
 
 const Routers = () => {
@@ -38,6 +39,10 @@ const Routers = () => {
       <Route 
       path="/thirdstep" 
       element={<ThirdStep />} 
+      />
+      <Route 
+      path="/fourthstep" 
+      element={<FourthStep />} 
       />
     </Routes>
   );
