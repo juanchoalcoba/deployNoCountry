@@ -1,13 +1,13 @@
-import HeaderDP from "../components/DashboardPaciente/HeaderDP"
-import SidePanel from "../components/DashboardPaciente/PanelLateral"
+import HeaderDP from "../components/DashboardPaciente/HeaderDP";
+import SidePanel from "../components/DashboardPaciente/PanelLateral";
 
 const DashboardPaciente = () => {
   return (
     <>
-    <HeaderDP />
-    <SidePanel />
+      <HeaderDP />
+      <SidePanel />
     </>
-  )
-}
+  );
+};
 
-export default DashboardPaciente
+export default DashboardPaciente;
