@@ -72,8 +72,8 @@ const FirstStep = () => {
               required
             >
               <option value="" disabled>Seleccionar Previsión</option>
-              <option value="prevision1">Previsión 1</option>
-              <option value="prevision2">Previsión 2</option>
+              <option value="Prevision1">Previsión 1</option>
+              <option value="Prevision2">Previsión 2</option>
             </select>
           </div>
 
@@ -90,8 +90,8 @@ const FirstStep = () => {
               required
             >
               <option value="" disabled>Seleccionar Especialidad</option>
-              <option value="especialidad1">Especialidad 1</option>
-              <option value="especialidad2">Especialidad 2</option>
+              <option value="Dermatología">Dermatologia</option>
+              <option value="Cardiología">Cardiología</option>
             </select>
           </div>
 

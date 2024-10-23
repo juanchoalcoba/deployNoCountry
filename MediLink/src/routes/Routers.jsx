@@ -6,6 +6,10 @@ import Login from "../pages/Login";
 import FirstStep from "../pages/FirstStep";
 import SecondStep from "../pages/SecondStep";
 import ThirdStep from "../pages/ThirdStep";
+import FourthStep from "../pages/FourthStep";
+import FifthStep from "../pages/Fifthstep";
+import SixthStep from "../pages/SixthStep";
+import SeventhStep from "../pages/SeventhStep";
 
 
 const Routers = () => {
@@ -38,6 +42,22 @@ const Routers = () => {
       <Route 
       path="/thirdstep" 
       element={<ThirdStep />} 
+      />
+      <Route 
+      path="/fourthstep" 
+      element={<FourthStep />} 
+      />
+      <Route 
+      path="/fIfthstep" 
+      element={<FifthStep />} 
+      />
+      <Route 
+      path="/sixthstep" 
+      element={<SixthStep  />} 
+      />
+      <Route 
+      path="/seventhstep" 
+      element={<SeventhStep  />} 
       />
     </Routes>
   );
