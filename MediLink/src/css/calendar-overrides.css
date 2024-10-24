@@ -1,24 +1,26 @@
 .react-calendar {
-    width: 365px !important; /* Puedes cambiar a 365px si lo prefieres */
+    width: 445px !important; 
     max-width: 100% !important;
     border: none !important;
     margin: 0 auto;
 }
 
-/* Ajustar el tamaño de los días de la semana */
+.react-calendar .react-calendar__navigation__label {
+    font-size: 1.5rem !important; /* Cambia el tamaño según tu preferencia */
+    font-weight: bold;
+}
+
 .react-calendar__month-view__weekdays__weekday {
-    font-size: 0.875rem !important; /* Ajustar el tamaño del texto de los días de la semana */
+    font-size: 0.875rem !important; 
     padding: 8px 0 !important;
 }
 
-/* Ajustar el tamaño de los números de los días */
 .react-calendar__tile {
     padding: 10px !important;
-    font-size: 0.875rem !important; /* Ajustar el tamaño del texto de los días */
+    font-size: 0.875rem !important; 
 }
 
-/* Ajustar el tamaño de cada celda del día */
 .react-calendar__month-view__days__day {
-    width: 45px !important;  /* Ancho específico para los días */
-    height: 45px !important; /* Altura específica para los días */
+    width: 45px !important;
+    height: 45px !important;
 }

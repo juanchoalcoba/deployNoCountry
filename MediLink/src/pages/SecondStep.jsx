@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import HeaderDP from "../components/DashboardPaciente/HeaderDP";
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css'; 
-import '../css/calendar-overrides.css'
+import '../css/calendar-overrides.css';
 import HoraEspecialistas from "../components/HoraEspecialistas";
 import HoraEspecialistas2 from "../components/HoraEspecialistas2";
 
@@ -13,10 +13,43 @@ const SecondStep = () => {
     const [selectedHour, setSelectedHour] = useState(null);
     const [especialidad, setEspecialidad] = useState('');
 
+    
     useEffect(() => {
+        
+        const months = {
+            "Enero": 0,
+            "Febrero": 1,
+            "Marzo": 2,
+            "Abril": 3,
+            "Mayo": 4,
+            "Junio": 5,
+            "Julio": 6,
+            "Agosto": 7,
+            "Setiembre": 8,
+            "Octubre": 9,
+            "Noviembre": 10,
+            "Diciembre": 11,
+        };
+
+
         const storedEspecialidad = localStorage.getItem('especialidad');
+        const storedMes = localStorage.getItem('mes');
+
         if (storedEspecialidad) {
             setEspecialidad(storedEspecialidad);
+        }
+
+        if (storedMes) {
+            const monthNumber = months[storedMes];
+            const today = new Date();
+            let targetYear = today.getFullYear();
+
+            if (monthNumber < today.getMonth()) {
+                targetYear += 1;
+            }
+
+            const newDate = new Date(targetYear, monthNumber, 1);
+            setCurrentDate(newDate);
         }
     }, []);
 

@@ -97,6 +97,7 @@ const Register = () => {
           </label>
           <input
             type="text"
+            minLength={6}
             id="dni"
             name="dni"
             placeholder="DNI"
@@ -145,6 +146,7 @@ const Register = () => {
           <div className="flex space-x-4">
             <input
               type="text"
+              maxLength={2}
               name="dia"
               placeholder="Día"
               value={formData.dia}
@@ -156,6 +158,7 @@ const Register = () => {
             <input
               type="text"
               name="mes"
+              maxLength={2}
               placeholder="Mes"
               value={formData.mes}
               onChange={handleChange}
@@ -165,6 +168,7 @@ const Register = () => {
             />
             <input
               type="text"
+              maxLength={4}
               name="ano"
               placeholder="Año"
               value={formData.ano}
@@ -212,6 +216,7 @@ const Register = () => {
           </label>
           <input
             type="password"
+            minLength={5}
             id="password"
             name="password"
             placeholder="Crear contraseña"
@@ -238,6 +243,7 @@ const Register = () => {
           </label>
           <input
             type="password"
+            minLength={5}
             id="repeat-password"
             name="repeatPassword"
             placeholder="Repetir contraseña"
