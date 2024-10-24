@@ -1,6 +1,8 @@
 import { PiStethoscopeBold } from "react-icons/pi";
 import { MdOutlineVideoCall } from "react-icons/md";
-import { GiMicroscope } from "react-icons/gi";
+import ExamenIcono from "../assets/ExamenIcono.svg";
+import Telemedicina from "../assets/Telemedicina.svg";
+import Doctor from "../assets/Doctor.svg";
 
 const SectionCards = () => {
   return (
@@ -22,9 +24,10 @@ const SectionCards = () => {
         <div className="bg-white border-[#515151] shadow-[0_5px_10px_rgba(0,0,0,0.25)] rounded-[20px] p-[32px] w-[400px] min-h-[485px] max-h-[576px] gap-[35px]">
           <div className="flex flex-col items-center">
             {/* Icono arriba del título */}
-            <PiStethoscopeBold
-              size={60}
+            <img
               className="text-[#515151] mb-8 items-center"
+              src={Doctor}
+              alt="Icono de Doctor"
             />
             <h3 className="text-center text-[24px] font-medium text-[#515151] mb-8">
               Médico de Guardia
@@ -47,9 +50,10 @@ const SectionCards = () => {
         <div className="bg-white border-[#515151] shadow-[0_5px_10px_rgba(0,0,0,0.25)] rounded-[20px] p-[32px] w-[400px] min-h-[485px] max-h-[576px] gap-[35px]">
           <div className="flex flex-col items-center">
             {/* Icono arriba del título */}
-            <MdOutlineVideoCall
-              size={60}
+            <img
               className="text-[#515151] mb-8 items-center"
+              src={Telemedicina}
+              alt="Icono de telemedicina"
             />
             <h3 className="text-center text-[24px] font-medium text-[#515151] mb-8">
               Telemedicina
@@ -73,11 +77,12 @@ const SectionCards = () => {
         <div className="bg-white border-[#515151] shadow-[0_5px_10px_rgba(0,0,0,0.25)] rounded-[20px] p-[32px] w-[400px] min-h-[485px] max-h-[576px] gap-[35px]">
           <div className="flex flex-col items-center">
             {/* Icono arriba del título */}
-            <GiMicroscope
-              size={60}
-              className="text-[#515151] mb-8 items-center"
+            <img
+              className="size-[64px]"
+              src={ExamenIcono}
+              alt="Icono de Examen"
             />
-            <h3 className="text-center text-[24px] font-medium text-[#515151] mb-8">
+            <h3 className="text-center text-[24px] font-medium text-[#515151] mb-8 mt-8">
               Exámenes
             </h3>
             <p className="text-left text-[16px] text-[#515151] leading-[26px] mb-10 px-5 pb-6">

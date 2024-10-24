@@ -56,14 +56,15 @@ const Register = () => {
       localStorage.setItem("users", JSON.stringify(existingUsers));
 
       // Guardar el nombre completo para el saludo en el dashboard
-      localStorage.setItem("loggedUser", JSON.stringify({ nombreCompleto: formData.nombreCompleto }));
-
+      localStorage.setItem(
+        "loggedUser",
+        JSON.stringify({ nombreCompleto: formData.nombreCompleto })
+      );
 
       // Redirigir al dashboard
       navigate("/DashboardPaciente");
     }
   };
-  
 
   return (
     <div className="mt-4 font-abc w-[474px] h-[1118.33px] mx-auto bg-white p-6 rounded-xl shadow-[0px_10px_30px_rgba(0,0,0,0.4)]">
@@ -81,12 +82,18 @@ const Register = () => {
         <h1 className="text-[24px] text-[#515151] font-medium">Crear cuenta</h1>
         <div className="flex items-center">
           <span className="text-[28px] text-gray-400">Mi</span>
-          <img src="logoheader.png" alt="Logo" />
+          <img
+            src="logoheader.png"
+            alt="Logo"
+          />
         </div>
       </div>
 
       {/* Formulario */}
-      <form className="space-y-6 p-4 mt-12" onSubmit={handleSubmit}>
+      <form
+        className="space-y-6 p-4 mt-12"
+        onSubmit={handleSubmit}
+      >
         {/* DNI */}
         <div>
           <label
@@ -128,7 +135,9 @@ const Register = () => {
             value={formData.nombreCompleto}
             onChange={handleChange}
             className={`w-full px-4 py-4 mt-2 border-b-2 border-gray-400 rounded-b-2xl outline-none transition-all duration-300 
-              ${focusedInput === "nombreCompleto" ? "bg-green-200" : "bg-white"}`}
+              ${
+                focusedInput === "nombreCompleto" ? "bg-green-200" : "bg-white"
+              }`}
             onFocus={() => handleFocus("nombreCompleto")}
           />
           <div className="h-5">
