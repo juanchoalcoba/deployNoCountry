@@ -38,13 +38,16 @@ const Login = () => {
       );
 
       if (foundUser) {
+        // Actualizar localStorage con el usuario autenticado
+        localStorage.setItem("loggedUser", JSON.stringify(foundUser));
+
+        // Navegar al dashboard
         navigate("/DashboardPaciente");
       } else {
         setErrors({ form: "DNI o contraseña incorrectos" });
       }
     }
   };
-
 
   return (
     <div className="mt-4 font-abc w-[474px]  mx-auto bg-white p-6 rounded-xl shadow-[0px_10px_30px_rgba(0,0,0,0.4)]">
