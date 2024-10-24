@@ -1,5 +1,5 @@
 import Telemedicina from "../assets/Telemedicina.svg";
-import Examen from "../assets/Examen.svg";
+import ExamenIcono from "../assets/ExamenIcono.svg";
 import Doctor from "../assets/Doctor.svg";
 import { useNavigate } from "react-router-dom"; // Importar el hook useNavigate
 
@@ -81,7 +81,7 @@ const SectionServices = () => {
             {/* Icono arriba del título */}
             <img
               className="size-8"
-              src={Examen}
+              src={ExamenIcono}
               alt="Icono de Doctor"
             />
             <h3 className="mt-5 text-center text-[24px] font-medium text-[#515151] mb-8">
