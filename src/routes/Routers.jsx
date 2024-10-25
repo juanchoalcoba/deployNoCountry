@@ -7,9 +7,9 @@ import FirstStep from "../pages/FirstStep";
 import SecondStep from "../pages/SecondStep";
 import ThirdStep from "../pages/ThirdStep";
 import FourthStep from "../pages/FourthStep";
-import FifthStep from "../pages/Fifthstep";
 import SixthStep from "../pages/SixthStep";
 import SeventhStep from "../pages/SeventhStep";
+import FifthStep from "../pages/FifthStep";
 
 
 const Routers = () => {
